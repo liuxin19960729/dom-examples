@@ -41,10 +41,14 @@
 
     let slowInfinite = {
       duration: 5000,
-      iterations: Infinity
+      iterations: 1
     }
 
-    divElem.animate( rotate360, slowInfinite );
+    const animation = divElem.animate(rotate360, slowInfinite);
+    animation.addEventListener("cancel", () => console.log("cancel"))
+    animation.addEventListener("finish", () => console.log("finish"))
+
+
 
   </script>
 </body>
